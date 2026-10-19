@@ -752,6 +752,8 @@ const EXTRA = [
   { id: "kalvini", film: true, client: { hu: "Rövidfilm", en: "Short film" }, title: { hu: "Kálvini szar", en: "Kálvini szar" }, dur: 205.46, w: 3840, h: 2160, fps: "23.976",
     desc: { hu: "Fikciós rövidfilm, 2026. Írta és rendezte Ágoston András, operatőr Détári Szabolcs.", en: "Fiction short, 2026. Written and directed by András Ágoston, shot by Szabolcs Détári." } }
 ];
+// "all" view: clients interleaved so no two neighbours share a client
+const MIX = ["interjutippek", "avis-automata", "lelek-kerdezz", "jf-oskor", "budai3-latte", "nutri-bulkingpro", "kutya", "bosco", "lelek-tunet", "jf-irtalneki", "cap-kartya", "biff-golya", "jf-barat", "avis-motor", "lelek-test", "woltpark", "budai3-kave", "levante", "jf-5dolog", "nutri-blackversum", "lelek-percept"];
 const findWork = id => WORKS.find(x => x.id === id) || EXTRA.find(x => x.id === id);
 const TOTAL = WORKS.reduce((a, w) => a + w.dur, 0);
 const OFFS = WORKS.map((w, i) => WORKS.slice(0, i).reduce((a, x) => a + x.dur, 0));
@@ -802,7 +804,7 @@ function drawChips() {
 }
 function drawWall() {
   const wall = document.getElementById("wall"); wall.innerHTML = "";
-  WORKS.filter(w => !w.film && (filter === "all" || w.group === filter)).forEach(w => {
+  (filter === "all" ? MIX.map(findWork) : WORKS.filter(w => !w.film && w.group === filter)).forEach(w => {
     const el = document.createElement("article"); el.className = "reel";
     el.innerHTML = '<button class="thumb' + (w.square ? ' square' : '') + '" type="button"><img loading="lazy" decoding="async" width="480" height="' + (w.square ? 480 : 853) + '" alt=""><video muted loop playsinline preload="none"></video><span class="tc mono"></span></button><div><div class="client"></div><h3></h3><div class="role-tag"></div><div class="fmt mono"></div></div>';
     const btn = el.querySelector(".thumb"), img = el.querySelector("img"), vid = el.querySelector("video");
