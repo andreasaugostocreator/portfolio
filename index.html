@@ -658,4 +658,16 @@ function setLang(l) {
 document.getElementById("lang-hu").addEventListener("click", () => setLang("hu"));
 document.getElementById("lang-en").addEventListener("click", () => setLang("en"));
 setLang(lang);
+
+// deep links: #<work id> opens that video straight away (e.g. .../portfolio/#kutya)
+function openFromHash() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  const w = WORKS.find(x => x.id === id); if (!w) return;
+  const card = [...document.querySelectorAll("#wall .reel")].find(el => el.querySelector("img") && el.querySelector("img").src.endsWith("/" + id + ".jpg"));
+  if (card) card.scrollIntoView({ block: "center" });
+  openWork(id);
+}
+openFromHash();
+window.addEventListener("hashchange", openFromHash);
+dlg.addEventListener("close", () => { if (WORKS.some(w => "#" + w.id === location.hash)) { try { history.replaceState(null, "", location.pathname + location.search); } catch (e) {} } });
 </script>
