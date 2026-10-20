@@ -758,7 +758,7 @@ const EXTRA = [
     desc: { hu: "Fikciós rövidfilm, 2026. Írta és rendezte Ágoston András, operatőr Détári Szabolcs.", en: "Fiction short, 2026. Written and directed by András Ágoston, shot by Szabolcs Détári." } }
 ];
 // "all" view: clients interleaved so no two neighbours share a client
-const MIX = ["nutri-bulkingpro", "avis-automata", "interjutippek", "budai3-latte", "jf-netflix", "levante", "nutri-blackversum", "avis-motor", "biff-golya", "budai3-kave", "jf-5dolog", "bosco", "jf-oskor", "cap-kartya", "kutya", "lelek-kerdezz", "jf-barat", "lelek-tunet", "jf-irtalneki", "lelek-test", "woltpark"];
+const MIX = ["nutri-bulkingpro", "avis-automata", "interjutippek", "budai3-latte", "jf-netflix", "jf-5dolog", "nutri-blackversum", "avis-motor", "biff-golya", "budai3-kave", "levante", "bosco", "jf-oskor", "cap-kartya", "kutya", "lelek-kerdezz", "jf-barat", "lelek-tunet", "jf-irtalneki", "lelek-test", "woltpark"];
 const findWork = id => WORKS.find(x => x.id === id) || EXTRA.find(x => x.id === id);
 const TOTAL = WORKS.reduce((a, w) => a + w.dur, 0);
 const OFFS = WORKS.map((w, i) => WORKS.slice(0, i).reduce((a, x) => a + x.dur, 0));
