@@ -707,6 +707,8 @@ const WORKS = [
     desc: { hu: "Irodai trendvideó: a telefon asztalról asztalra jár, a csattanó egy kőkorszaki kép.", en: "Office trend video: the phone travels from desk to desk, and the punchline is a Stone Age picture." } },
   { id: "jf-barat", client: { hu: "JobForce", en: "JobForce" }, group: "jobforce", title: { hu: "POV: a munkahelyi legjobb barátod", en: "POV: your work best friend" }, dur: 23.27, w: 2160, h: 3840, fps: "23.976",
     desc: { hu: "Trend-alapú POV-videó két kollégáról, akik mindent együtt csinálnak.", en: "Trend-based POV video about two coworkers who do everything together." } },
+  { id: "jf-netflix", client: { hu: "JobForce", en: "JobForce" }, group: "jobforce", title: { hu: "Hogyan éltem túl a marketinges lányt", en: "How I survived the marketing girl" }, dur: 48.58, w: 2160, h: 3840, fps: "23.976",
+    desc: { hu: "Netflix-dokusorozat paródia: a kollégák egyenként, vallomásszékben mesélnek a marketinges lányról.", en: "Netflix docuseries parody: coworkers take the confessional chair one by one to talk about the marketing girl." } },
   { id: "woltpark", client: { hu: "JobForce", en: "JobForce" }, group: "jobforce", title: { hu: "Wolt-sketch a parkban", en: "Wolt sketch in the park" }, dur: 32.32, w: 1080, h: 1920, fps: "23.976",
     desc: { hu: "Kétszereplős sketch a futármunkáról, szórakoztató feliratokkal és emoji-animációval.", en: "Two-hander sketch about courier work with playful captions and an emoji animation." } },
   { id: "kutya", client: { hu: "JobForce", en: "JobForce" }, group: "jobforce", title: { hu: "POV: a munkatársad behozza a kutyáját", en: "POV: your coworker brings their dog in" }, dur: 20.7, w: 1080, h: 1920, fps: "30",
@@ -756,7 +758,7 @@ const EXTRA = [
     desc: { hu: "Fikciós rövidfilm, 2026. Írta és rendezte Ágoston András, operatőr Détári Szabolcs.", en: "Fiction short, 2026. Written and directed by András Ágoston, shot by Szabolcs Détári." } }
 ];
 // "all" view: clients interleaved so no two neighbours share a client
-const MIX = ["nutri-bulkingpro", "avis-automata", "budai3-latte", "interjutippek", "levante", "nutri-blackversum", "avis-motor", "biff-golya", "budai3-kave", "jf-5dolog", "bosco", "jf-oskor", "cap-kartya", "kutya", "lelek-kerdezz", "jf-barat", "lelek-tunet", "jf-irtalneki", "lelek-test", "woltpark"];
+const MIX = ["nutri-bulkingpro", "avis-automata", "jf-netflix", "budai3-latte", "interjutippek", "levante", "nutri-blackversum", "avis-motor", "biff-golya", "budai3-kave", "jf-5dolog", "bosco", "jf-oskor", "cap-kartya", "kutya", "lelek-kerdezz", "jf-barat", "lelek-tunet", "jf-irtalneki", "lelek-test", "woltpark"];
 const findWork = id => WORKS.find(x => x.id === id) || EXTRA.find(x => x.id === id);
 const TOTAL = WORKS.reduce((a, w) => a + w.dur, 0);
 const OFFS = WORKS.map((w, i) => WORKS.slice(0, i).reduce((a, x) => a + x.dur, 0));
