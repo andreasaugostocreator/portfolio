@@ -729,8 +729,6 @@ const WORKS = [
     desc: { hu: "Interjú egy terapeutával, animált ikonokkal és kiemelt kulcsszavakkal.", en: "Interview with a therapist, with animated icons and highlighted keywords." } },
   { id: "lelek-test", client: { hu: "Lélekoázis", en: "Lélekoázis" }, group: "lelekoazis", title: { hu: "A test emlékezik", en: "The body remembers" }, dur: 44.63, w: 2160, h: 3840, fps: "25",
     desc: { hu: "Interjú egy terapeutával, szavanként megjelenő feliratokkal és címszavakkal.", en: "Interview with a therapist, with word-by-word captions and headline words." } },
-  { id: "lelek-percept", client: { hu: "Lélekoázis", en: "Lélekoázis" }, group: "lelekoazis", title: { hu: "Perceptikus kezelés", en: "Perceptive treatment" }, dur: 56.55, w: 2160, h: 3840, fps: "25",
-    desc: { hu: "Interjú egy terapeutával, ikonokkal és időpontfoglalásra hívó zárással.", en: "Interview with a therapist, with icons and a closing call to book an appointment." } },
   { id: "cap-kartya", client: { hu: "CAP", en: "CAP" }, group: "other", title: { hu: "Mire költenéd?", en: "What would you spend it on?" }, dur: 23.89, w: 2160, h: 3840, fps: "29.97",
     desc: { hu: "Irodai utcai interjú formátum animált tárgy-ikonokkal és követőszámlálóval.", en: "Office vox-pop format with animated object icons and a follower counter." } },
   { id: "levante", client: { hu: "Levante", en: "Levante" }, group: "other", title: { hu: "Munka és social life", en: "Work and social life" }, dur: 41.68, w: 2160, h: 3840, fps: "25",
@@ -756,7 +754,7 @@ const EXTRA = [
     desc: { hu: "Fikciós rövidfilm, 2026. Írta és rendezte Ágoston András, operatőr Détári Szabolcs.", en: "Fiction short, 2026. Written and directed by András Ágoston, shot by Szabolcs Détári." } }
 ];
 // "all" view: clients interleaved so no two neighbours share a client
-const MIX = ["interjutippek", "avis-automata", "lelek-kerdezz", "jf-oskor", "budai3-latte", "nutri-bulkingpro", "kutya", "bosco", "lelek-tunet", "jf-irtalneki", "cap-kartya", "biff-golya", "jf-barat", "avis-motor", "lelek-test", "woltpark", "budai3-kave", "levante", "jf-5dolog", "nutri-blackversum", "lelek-percept"];
+const MIX = ["interjutippek", "avis-automata", "lelek-kerdezz", "jf-oskor", "budai3-latte", "nutri-bulkingpro", "kutya", "bosco", "lelek-tunet", "jf-irtalneki", "cap-kartya", "biff-golya", "jf-barat", "avis-motor", "lelek-test", "woltpark", "budai3-kave", "levante", "jf-5dolog", "nutri-blackversum"];
 const findWork = id => WORKS.find(x => x.id === id) || EXTRA.find(x => x.id === id);
 const TOTAL = WORKS.reduce((a, w) => a + w.dur, 0);
 const OFFS = WORKS.map((w, i) => WORKS.slice(0, i).reduce((a, x) => a + x.dur, 0));
