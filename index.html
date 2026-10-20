@@ -440,9 +440,10 @@ dl.credits dd { margin: 0; font-weight: 600; }
 footer { padding-block: 20px; font: 400 12px var(--font-mono); color: var(--muted); }
 
 /* player */
-dialog { border: 0; padding: 0; margin: 0; inset: 0; background: transparent; max-width: none; max-height: none; width: auto; height: auto; overflow: hidden; }
+/* fixed + own scrim so the player still covers the page if the browser drops it from the top layer (Safari after leaving video fullscreen) */
+dialog { position: fixed; z-index: 100; border: 0; padding: 0; margin: 0; inset: 0; background: var(--scrim); max-width: none; max-height: none; width: auto; height: auto; overflow: hidden; }
 .player video { min-width: 0; }
-dialog::backdrop { background: var(--scrim); }
+dialog::backdrop { background: transparent; }
 .player { height: 100%; display: flex; align-items: center; justify-content: center; gap: 36px; padding: max(20px, env(safe-area-inset-top, 0px)) max(16px, env(safe-area-inset-right, 0px)) max(20px, env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px)); }
 .player video { max-height: 88vh; max-width: min(100%, 1200px); background: #000; }
 .player.vertical video { max-width: min(100%, 50vh); }
