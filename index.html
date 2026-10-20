@@ -226,7 +226,7 @@ a { color: var(--signal); }
 .eyebrow { font-family: var(--font-mono); font-weight: 500; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
 
 /* top bar */
-.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); border-bottom: 1px solid var(--ink); }
+.bar { position: sticky; top: 0; z-index: 10; background: var(--paper); border-bottom: 1px solid var(--ink); padding-top: env(safe-area-inset-top, 0px); } /* pinned at 0 and padded so its background fills the status-bar strip under viewport-fit=cover */
 .bar .wrap { display: flex; align-items: center; justify-content: flex-end; gap: 16px; padding-block: 12px; }
 .bar .mark { font-family: var(--font-display); font-weight: 800; color: var(--ink); text-decoration: none; font-size: 16px; letter-spacing: -.01em; }
 .bar .mark::before { content: "●"; color: var(--signal); margin-right: 8px; font-size: 11px; vertical-align: 2px; }
