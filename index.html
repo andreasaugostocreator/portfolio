@@ -286,7 +286,7 @@ a { color: var(--signal); }
 .clips { display: flex; gap: 3px; height: 84px; }
 .clip.tight > * { display: none; }
 .clip.tight { padding: 0; }
-.clip { --c: #7d756b; flex: var(--d) 1 0; min-width: 24px; border: 0; cursor: pointer; padding: 0 6px 8px; display: flex; flex-direction: column; justify-content: flex-end; text-align: left; color: #f3eee6; overflow: hidden; white-space: nowrap; font: 600 11px var(--font-body); position: relative; background: #2c2825 var(--img) center / cover no-repeat; }
+.clip { --c: #7d756b; flex: var(--d) 1 0; min-width: 24px; border: 0; cursor: pointer; padding: 0 6px 8px; display: flex; flex-direction: column; justify-content: flex-end; text-align: left; color: #f3eee6; overflow: hidden; white-space: nowrap; font: 600 11px var(--font-body); position: relative; background: #2c2825 var(--img) left center / auto 100% repeat-x; }
 .clip::before { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, rgba(11,10,9,.88), rgba(11,10,9,.15) 75%); transition: background .2s; }
 .clip::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 4px; background: var(--c); }
 .clip > * { position: relative; overflow: hidden; text-overflow: ellipsis; }
